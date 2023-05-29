@@ -36,14 +36,16 @@ body {
   position: absolute;
 }
 
-.parallax_container h1 {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 100px;
-  font-weight: 900;
-}
+@media only screen and (min-width: 500px) {
+  .parallax_container h1 {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    font-weight: 900;
+   }
+  }
 
 .about {
   min-height: 125vh;
