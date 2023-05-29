@@ -4,14 +4,14 @@ html, body {
 }
 
 .container {  
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 20px 20px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      ". . game_name game_name game_name . ."
-      ". game_instruction game_instruction game_instruction game_instruction game_instruction ."
-      ". . game_button1 game_button2 game_button3 . .";
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px 20px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . game_name game_name game_name . ."
+    ". game_instruction game_instruction game_instruction game_instruction game_instruction ."
+    ". . game_button1 game_button2 game_button3 . .";
   }
 
   .game_name { 
@@ -23,22 +23,22 @@ html, body {
     background-clip: text;
     -webkit-background-clip: text;
     line-height: 44px;
- }
+  }
   
   .game_button1 { 
     grid-area: game_button1;
     padding-bottom: 30px;
- }
+  }
 
  .game_button2 { 
     grid-area: game_button2;
     padding-bottom: 30px;
- }
+  }
 
  .game_button3 { 
     grid-area: game_button3;
     padding-bottom: 30px;
- }
+  }
   
   .game_instruction { 
     grid-area: game_instruction; 
@@ -47,7 +47,7 @@ html, body {
     color: #111;
     line-height: 24px;
     width: 100%;
-}
+  }
 
 .img-project {
   width: 100%;
@@ -56,12 +56,12 @@ html, body {
 
 @media only screen and (min-width: 768px) {
   .game_instruction{
-      display: grid; 
-      grid-template-columns: 3fr 1fr; 
-      grid-template-rows: 1fr; 
-      gap: 0px 10px; 
-      grid-template-areas: 
-        ". ."; 
+    display: grid; 
+    grid-template-columns: 3fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 10px; 
+    grid-template-areas: 
+      ". ."; 
     }
     .img-project {
       width: 100%;
