@@ -54,6 +54,13 @@ html, body {
   margin-top: 68px;
 }
 
+.newproject{
+  font-size: 12px;
+  width: 50%;
+      margin-left: 60px;
+}
+
+
 .container2 {
   display:flex;
   gap: 10px;
