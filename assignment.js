@@ -54,7 +54,7 @@ function randomArr() {
     board = createArr(col,row);
     for (let i = 0; i < col; i++) {
         for (let j = 0; j < row; j++) {
-            board[i][j] = Math.floor(Math.random() * 2);
+            board[i][j] = Math.floor(Math.random() * 2);;
         }
     }  
 }
@@ -118,7 +118,7 @@ function countN(board, x, y) {
         for (let j = -1; j < 2; j++) {
             let c = x + i;
             let r = y + j;
-            if (c<=0 || r<=0 || c*grid_size >= w || r*grid_size >= h) { 
+            if (c < 0 || r < 0 || c >= col || r >= row) { 
                 continue;
             } else if (i===0 && j===0) {
                 continue;
