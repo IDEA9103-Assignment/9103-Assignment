@@ -43,42 +43,178 @@
         <div class="game_button3">
           <button class="button" id="button3">Stop</button>
         </div>
+        
         <div class="game_instruction">
-          <article class="project">
-            <h2>Project Explanation</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel
-              urna luctus, mollis ante placerat, accumsan metus. Donec lorem ante,
-              cursus vel lorem consequat, varius mollis eros. Sed ex erat, interdum
-              ac euismod vitae, molestie id lorem. Proin tempor fermentum leo quis
-              sollicitudin. Mauris elit ligula, fermentum in enim a, aliquet sodales
-              odio.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel
-              urna luctus, mollis ante placerat, accumsan metus. Donec lorem ante,
-              cursus vel lorem consequat, varius mollis eros. Sed ex erat, interdum
-              ac euismod vitae, molestie id lorem. Proin tempor fermentum leo quis
-              sollicitudin. Mauris elit ligula, fermentum in enim a, aliquet sodales
-              odio.
-            </p>
-            <p style="color: #f857d8; font-size: 13px;">
-              Tap on the grid to start / stop the background music.
-            </p>
-          </article>
-          <img
-            class="img-project"
-            src="instruction.png"
-            alt="project-pic"
-          />
+            <article class="project">
+              <h2>Project Explanation</h2>
+               <p>
+              Each of the flowers obeys four simple rules:
+              </p>
+              <p>
+              1. The flower is surrounded by ≥ 3 flowers, the flower will be undernourished and wilt, turning into fertilizer
+              <br>
+              2. The flower is surrounded by ≥ 4 pieces of fertilizer, the flower will be over-nourished and wilt into fertilizer
+              <br>
+              3. If 2 pieces of fertilizer around the fertilizer, the nutrients are sufficient and new flowers grow
+              <br>
+              4. If 3 flowers around the fertilizer, which grow into new flowers due to the spread of the flower seeds
+              </p>
+              <h2 style="color: #57c8f8; font-size: 13px;">
+              Example
+                </h2>
+                <p style="color: #f857d8; font-size: 13px;">
+                  Try to drag the element to get the answer
+                </p>
+
+                <div class="square">
+                  <div class="png"></div>
+                </div>
+
+                <br>
+                <section class="container2">
+                 
+                  <p>1.</p>
+                    <div class="square">
+                      <div class="png" draggable="true"></div>
+                      <div class="png" draggable="true"></div>
+                  </div>
+                  <p>+</p>
+                  <div class="square" draggable="true">
+                    <div class="png" ></div>  
+                    <div class="png" ></div>
+                </div>
+                <p>=</p>
+                <div class="box">
+              </div>
+              <br>
+              <p>2.</p>
+              <div class="square">
+                <div class="png" draggable="true"></div>  
+              </div>
+              <p>+</p>
+                    <div class="box">
+                      <div class="pngs"  draggable="true" ></div>
+                      <div class="pngs"  draggable="true" ></div>
+                  </div>
+                  <div class="box">
+                    <div class="pngs"draggable="true"></div>  
+                   <div class="pngs" draggable="true"></div>
+                  </div>
+                  <p>=</p>
+                 <div class="box">
+               </div>
+                </section>
+                <br><br><br><br><br>
+                <section class="container2">
+                <p>3.</p>
+                <div class="box">
+                  <div class="pngs"draggable="true"></div>  
+                 <div class="pngs"draggable="true" ></div></div>
+                 <p>+</p>
+                      <div class="box">
+                        <div class="pngs" draggable="true"></div></div>
+                        
+                    <div class="box">
+                      <div class="pngs"  draggable="true"></div>  
+                    </div>
+                    <p>=</p>
+                    <div class="square">
+                   </div>
+                 <br>
+                 <p>4.</p>
+                <div class="square">
+                  <div class="png" draggable="true" ></div>  
+                 <div class="png" draggable="true" ></div>
+                 <div class="png" draggable="true" ></div>
+                </div>
+                <p>+</p>
+                      <div class="box">
+                        <div class="pngs"draggable="true" ></div>
+                    </div>
+                    <p>=</p>
+                    <div class="square">
+                   </div>
+                </section>
+
+                  <img
+                class="img-project"
+                src="instruction.png"
+                alt="project-pic"
+              />
+
+                <p style="color: #f857d8; font-size: 13px;">
+                  Tap on the grid to start / stop the background music.
+                </p>
+
+              
         </div>
         <div class="game_name">
-          <h1>Project Name</h1>
+            <h1 id="title">Blooming</h1>
+            <script>
+              var title = document.getElementById("title");
+        
+              document.addEventListener("scroll", (event) => {
+                var positionY = window.scrollY;
+        
+                title.style.fontSize = `${80 + positionY * 0.1}px`;
+        
+                var _newOpacity = positionY * 0.001;
+              });
+            </script>
         </div>
     </div>
-    <script src="assignment.js" ></script>
-    <script src="p5.js"></script>
-    <script src="p5.sound.js"></script>
+   
+
+<script>
+  const squares = document.querySelectorAll(".square");
+  const pngs = document.querySelector(".png");
+  
+  squares.forEach((square)=>{
+  square.addEventListener("dragover",(e)=>{
+      e.preventDefault();
+      square.classList.add("hovered");
+    
+  });
+  
+  square.addEventListener("dragleave",()=>{
+      square.classList.remove("hovered");
+  
+  });
+  
+  square.addEventListener("drop",()=>{
+      square.appendChild(pngs);
+      square.classList.remove("hovered");
+  });
+  });
+  </script>
+
+<script>
+  const boxes = document.querySelectorAll(".box");
+  const pngss = document.querySelector(".pngs");
+ 
+  boxes.forEach((box)=>{
+  box.addEventListener("dragover",(e)=>{
+      e.preventDefault();
+      box.classList.add("hovered");
+    
+  });
+  
+  box.addEventListener("dragleave",()=>{
+      box.classList.remove("hovered");
+  
+  });
+  
+  box.addEventListener("drop",()=>{
+    box.appendChild(pngss)
+    box.classList.remove("hovered");
+    });
+  });
+  </script>
+  
+  <script src="assignment.js" ></script>
+  <script src="p5.js"></script>
+  <script src="p5.sound.js"></script>
+
   </body>
 </html>
 
