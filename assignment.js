@@ -54,7 +54,7 @@ function randomArr() {
     board = createArr(col,row);
     for (let i = 0; i < col; i++) {
         for (let j = 0; j < row; j++) {
-            board[i][j] = Math.floor(Math.random() * 2);;
+            board[i][j] = Math.floor(Math.random() * 2);
         }
     }  
 }
