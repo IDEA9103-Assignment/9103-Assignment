@@ -28,6 +28,7 @@ function setup() {
     });
     let x = (windowWidth - w) / 2;
     cnv.position(x);
+    img.resize(grid_size-6,grid_size-6);
     randomArr();
 }
 
@@ -55,8 +56,7 @@ function randomArr() {
         for (let j = 0; j < row; j++) {
             board[i][j] = Math.floor(Math.random() * 2);;
         }
-    }
-    img.resize(grid_size-6,grid_size-6);
+    }  
 }
 
 //Create a 2d array
@@ -90,6 +90,7 @@ function draw() {
 //Create new 2d array for the next generation
 //For each element in the array, check its neighbors
 //The element will remain the same or become a flower or become a piece of fertilizer based on the rules
+
 function createNewArr() {
     let newBoard = createArr(col,row);
     for (let i = 0; i < col; i++) {
