@@ -96,7 +96,7 @@ function createNewArr() {
         for (let j = 0; j < row; j++) {
             let current = board[i][j];         
             let sumN = countN(board, i, j);
-            if (current == 0 && sumN == 3) {
+            if (current == 0 && ((sumN == 3 || sumN == 7))) {
                 newBoard[i][j] = 1;
             } else if (current == 1 && (sumN < 2 || sumN > 3)) {
                 newBoard[i][j] = 0;
@@ -108,6 +108,7 @@ function createNewArr() {
     frameRate(10);
     board = newBoard;
 }
+
 
 //Count the the number of flowers and pieces of fertilizer in the current element's neighbor
 function countN(board, x, y) {
