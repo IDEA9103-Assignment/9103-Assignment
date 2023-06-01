@@ -118,11 +118,28 @@ html, body {
 @media only screen and (max-width: 768px) {
   .container2 .square{
     position:relative;
+    height:40px;
+    width:40px;
+    border-radius:12px;
+    border:2px solid grey transparent;
+  }
+  
+  .container2 .box{
+    position:relative;
+    height:40px;
+    width:40px;
+    border-radius:12px;
+    border:2px solid grey transparent ;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container2 .square{
+    position:relative;
     height:30px;
     width:30px;
     border-radius:12px;
-    border:2px solid grey transparent;
-    
+    border:2px solid grey transparent; 
   }
   
   .container2 .box{
